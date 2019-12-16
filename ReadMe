@@ -1,0 +1,14 @@
+Problem description:ACS End to End traffic automatic testing
+Root cause analysis: To test the acs end to end traffic for first packet classification for every application have to type the individual dig command wrt each application domain and check response which is time consuming in testing process.
+Resolution: To solve it I wrote a script which will take the all the domain name of all application present in app.json file and automatically perform the dig command wrt each application and store the response(app_id) in a log file based on date and time and if there is any diff in response then it will print in terminal.
+
+LOG File info:
+1)domainlog→ This folder having date wise log file dig response of domain/hostname for all domain/hostname present in apps.json
+2) IPlog→ This folder having date wise log file dig response of IP address for all IP present in apps.json.
+3) PAlog→ This folder having date wise log file curl response of PUT,POST and GET.
+4) AppIdlog→ This folder having date wise log file curl GET response and dig response for all app_id present in apps.json.
+5) Apppatternlog-> This folder having date wise log file for all app pattern deployed.
+6) Geodnslog-> geo dns info for all app_id.
+7) Patternlog→ This folder having date wise log file scm latest tgz file info
+8. scm_tgz_file→ This folder having date wise folder which having downloaded tgz pattern file and extracted inside it.
+9) bootstraplog->this folder having date wise log for bootstrapping support during boot up of aggregator. GET patternns
